@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, Dimensions } from 'react-native'
+import { View, Text, StyleSheet, Dimensions, Image } from 'react-native'
 import React from 'react'
 
 
@@ -13,7 +13,20 @@ const SingleNews = ({ item, index }) => {
             width: windowWidth,
             transform: [{ scaleY: -1 }],
         }}>
-            <Text style={styles.title}>{item.title}</Text>
+            <Image
+                source={{ uri: item.urlToImage }}
+                style={{ height: "45%", resizeMode: "cover", width: windowWidth }}
+            />
+            <View style={{ ...styles.description, backgroundColor: "#282C35" }}>
+
+           
+            <Text style={{ ...styles.title, color: "white" }}>{item.title}</Text>
+
+            <Text style={{ ...styles.content, color: "white" }}>
+                {item.description}
+            </Text>
+            </View>
+
         </View>
     )
 }
@@ -24,9 +37,13 @@ const styles = StyleSheet.create({
     title: {
         fontSize: 25,
         fontWeight: "bold",
-        marginTop:60,
-        marginLeft:7,
+        // marginTop:60,
+        marginLeft: 7,
         paddingBottom: 10,
-        color: "white",
+    },
+    content: {
+        fontSize: 18,
+        paddingBottom: 10,
+        // alignItems:"center",
     },
 });
