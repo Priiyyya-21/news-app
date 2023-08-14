@@ -23,14 +23,12 @@ const Context = ({ children }) => {
     return (
         <NewsContext.Provider
         value={{
-          news,
-        //   setCategory,
-          index,
-          setIndex,
-        //   setSource,
-        //   darkTheme,
-        //   setDarkTheme,
-          fetchNews,
+         news,
+         index,
+         setIndex,
+         fetchNews,
+         setCategory
+
         }}
       >
         {children}
