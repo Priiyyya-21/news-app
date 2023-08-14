@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import InshortTabs from './components/InshortTabs';
 
 export default function App() {
-  return <View style={styles.container}>
+  return <View style={{...styles.container,backgroundColor:"#282C35"}}>
     <InshortTabs/>
 
     <StatusBar style="auto" />
