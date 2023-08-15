@@ -21,13 +21,15 @@ const DiscoverScreen = () => {
 
   return (
 
-      // categories
+      
 
     <View style={styles.discover}>
+
+      {/* Search */}
       <Search />
-      <Text
-        style={{ ...styles.subtitle, color: "white" }}
-      >
+       {/* categories */}
+
+      <Text style={{ ...styles.subtitle, color: "white" }}>
         Categories
       </Text>
       <Carousel
