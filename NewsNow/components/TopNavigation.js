@@ -1,28 +1,28 @@
-import { Text, View, StyleSheet, TouchableOpacity } from 'react-native'
-import React, { useContext } from 'react'
-import { MaterialCommunityIcons } from '@expo/vector-icons';
-import { SimpleLineIcons } from '@expo/vector-icons';
-import { AntDesign } from '@expo/vector-icons';
-import { NewsContext } from '../API/Context';
+import React, { useContext } from "react";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { AntDesign } from "@expo/vector-icons";
+import { SimpleLineIcons } from "@expo/vector-icons";
+import { Feather } from "@expo/vector-icons";
+import { NewsContext } from "../API/Context";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 const TopNavigation = ({ index, setIndex }) => {
-
-  const { fetchNews } = useContext(NewsContext);
+  const { darkTheme, setDarkTheme, fetchNews } = useContext(NewsContext);
 
   return (
     <View
       style={{
         ...styles.container,
-        backgroundColor: "#282C35"
+        backgroundColor: darkTheme ? "#282C35" : "white",
       }}
     >
       {index === 0 ? (
         <TouchableOpacity
-          // onPress={() => setDarkTheme(!darkTheme)}
+          onPress={() => setDarkTheme(!darkTheme)}
           style={styles.left}
         >
           <Text
-            style={{ ...styles.text, color: "lightgrey" }}
+            style={{ ...styles.text, color: darkTheme ? "lightgrey" : "black" }}
           >
             <MaterialCommunityIcons
               name="theme-light-dark"
@@ -38,14 +38,14 @@ const TopNavigation = ({ index, setIndex }) => {
         >
           <SimpleLineIcons name="arrow-left" size={15} color="#007FFF" />
           <Text
-            style={{ ...styles.text, color: "lightgrey" }}
+            style={{ ...styles.text, color: darkTheme ? "lightgrey" : "black" }}
           >
             Discover
           </Text>
         </TouchableOpacity>
       )}
 
-      <Text style={{ ...styles.center, color: "white" }}>
+      <Text style={{ ...styles.center, color: darkTheme ? "white" : "black" }}>
         {index ? "All News" : "Discover"}
       </Text>
       {index ? (
@@ -63,18 +63,18 @@ const TopNavigation = ({ index, setIndex }) => {
           onPress={() => setIndex(index === 0 ? 1 : 0)}
         >
           <Text
-            style={{ ...styles.text, color: "white" }}
+            style={{ ...styles.text, color: darkTheme ? "white" : "black" }}
           >
             All News
           </Text>
           <SimpleLineIcons name="arrow-right" size={15} color="#007FFF" />
         </TouchableOpacity>
       )}
-
     </View>
   );
 };
 
+export default TopNavigation;
 
 const styles = StyleSheet.create({
   container: {
@@ -107,4 +107,3 @@ const styles = StyleSheet.create({
     alignItems: "flex-end",
   },
 });
-export default TopNavigation
