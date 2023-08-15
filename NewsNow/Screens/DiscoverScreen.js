@@ -20,6 +20,9 @@ const DiscoverScreen = () => {
   const { setCategory, setSource } = useContext(NewsContext);
 
   return (
+
+      // categories
+
     <View style={styles.discover}>
       <Search />
       <Text
@@ -49,6 +52,8 @@ const DiscoverScreen = () => {
         inactiveSlideScale={1}
         inactiveSlideOpacity={1}
       />
+
+      {/* source */}
       <Text
         style={{ ...styles.subtitle, color:  "white"  }}
       >
