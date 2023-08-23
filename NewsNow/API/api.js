@@ -68,7 +68,7 @@ export const categories = [
     {
       id: "cnn",
       name: "CNN",
-      pic:"https://paintingcontractorsdenver.co/wp-content/uploads/2020/03/cnn-logo.png",
+      pic:"https://upload.wikimedia.org/wikipedia/commons/f/fb/Cnn_logo_red_background.png",
       // pic: "https://bankimooncentre.org/wp-content/uploads/2020/06/cnn-logo-square.png",
     },
     {
